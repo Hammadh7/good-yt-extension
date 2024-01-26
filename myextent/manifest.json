@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "Custom YouTube Homepage",
+    "version": "1.0",
+    "description": "Modify YouTube homepage to show only subscribed channels' videos.",
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/icon16.jpg",
+        "48": "images/icon48.jpg",
+        "128": "images/icon128.jpg"
+      }
+    },
+    "permissions": ["storage", "activeTab", "tabs"],
+    "icons": {
+      "16": "images/icon16.jpg",
+      "48": "images/icon48.jpg",
+      "128": "images/icon128.jpg"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://www.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
